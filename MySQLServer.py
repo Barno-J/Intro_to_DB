@@ -4,8 +4,8 @@ from mysql.connector import Error
 try:
     mydb = mysql.connector.connect(
         host="localhost",
-        user="yourusername",
-        password="yourpassword"
+        user="root",
+        password="Chebby2024." 
     )
 
     mycursor = mydb.cursor()
@@ -17,8 +17,7 @@ except Error as e:
     print(f"Error while connecting to MySQL: {e}")
 
 finally:
-    if 'mycursor' in locals() and mycursor:
+    if 'mycursor' in locals():
         mycursor.close()
     if 'mydb' in locals() and mydb.is_connected():
         mydb.close()
-    print("Database connection closed.") 
